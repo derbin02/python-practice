@@ -1,0 +1,25 @@
+/* ---------- FIX STREAMLIT BUTTON VISIBILITY ---------- */
+
+div.stButton > button {
+    background: #ffd200 !important;   /* bright yellow */
+    color: #052a66 !important;        /* LIC dark blue text */
+    border: none !important;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.15s ease-in-out;
+}
+
+div.stButton > button:hover {
+    background: #ffca00 !important;   /* darker yellow */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
+}
+
+div.stButton > button:active {
+    transform: translateY(0px);
+}
