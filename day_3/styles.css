@@ -1,0 +1,57 @@
+/* styles.css - fresh teal→purple calculator, centered, large readable UI */
+
+html, body, [data-testid="stAppViewContainer"] {
+  background: linear-gradient(180deg,#e6fcff 0%, #eef2ff 100%);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #052a3a;
+  padding: 18px;
+}
+
+/* hero */
+.calc-hero { text-align:center; margin-bottom:18px; }
+.title { font-size:36px; font-weight:900; background: linear-gradient(90deg,#0ea5a9,#7c3aed); -webkit-background-clip:text; color:transparent; }
+.subtitle { color:#334155; font-weight:700; margin-top:6px; }
+
+/* main card */
+.card { display:block; background:white; padding:18px; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,0.06); }
+
+/* inputs row */
+.input-row { display:flex; gap:10px; align-items:center; margin-bottom:12px; }
+input[type="text"], .stTextInput>div>input {
+  height:48px !important; font-size:18px !important; padding:8px 12px;
+  border-radius:8px !important; border:1px solid #e6eef6 !important;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* result big */
+.result { margin:14px 0; padding:12px; border-radius:10px; font-weight:900; text-align:left; font-size:20px; }
+.result.ok { background: linear-gradient(90deg,#e6fdfc,#eff6ff); color:#064e52; border:2px solid rgba(14,165,169,0.12); }
+.result.fail { background:#fff1f2; color:#b91c1c; border:2px solid rgba(185,28,28,0.08); font-weight:800; font-size:16px; }
+.resval { font-size:28px; color:#0f172a; margin-left:8px; }
+
+/* keypad grid */
+.buttons-grid { margin-top:8px; }
+.stButton>button { border-radius:8px; height:48px; font-weight:800; }
+button[id^="key_"] { background:linear-gradient(180deg,#f8fafc,#ffffff); border:1px solid #e6eef6; color:#0f172a; }
+button[id^="key_."] { font-weight:900; }
+button[id^="key_±"] { background:linear-gradient(90deg,#7c3aed,#06b6d4); color:white; }
+
+/* action buttons */
+.stButton>button[aria-label="calc_clear"], .stButton>button[key="calc_clear"] { background:#f8fafc; }
+.stButton>button[aria-label="calc-run"], .stButton>button[key="calc-run"] { background:linear-gradient(90deg,#06b6d4,#7c3aed); color:white; }
+
+/* right side history */
+.side-card { background:white; padding:12px; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.04); }
+.side-title { font-weight:900; color:#0f172a; margin-bottom:8px; }
+
+/* history rows */
+.hist-row { padding:6px 4px; font-weight:700; color:#334155; }
+
+/* footer */
+.footer { color:#475569; margin-top:10px; font-weight:700; }
+
+/* responsive */
+@media(max-width:880px){
+  .input-row { flex-direction:column; }
+  .title { font-size:28px; }
+}
