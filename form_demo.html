@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Form Demo</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    label { display:block; margin-top:10px; }
+    input, textarea, select { width: 300px; padding:6px; }
+    #result { margin-top:15px; padding:10px; border:1px solid #ddd; display:none; background:#f7fff7; }
+    button { margin-top:12px; padding:8px 12px; }
+  </style>
+</head>
+<body>
+  <h2>Contact Form — Demo</h2>
+
+  <form id="contactForm">
+    <label>Full name
+      <input id="fullname" name="fullname" type="text" placeholder="Your name">
+    </label>
+
+    <label>Email
+      <input id="email" name="email" type="email" placeholder="you@example.com">
+    </label>
+
+    <label>Age
+      <select id="age" name="age">
+        <option value="">Select</option>
+        <option value="18-25">18–25</option>
+        <option value="26-35">26–35</option>
+        <option value="36+">36+</option>
+      </select>
+    </label>
+
+    <label>Gender
+      <input type="radio" id="g_male" name="gender" value="male"> Male
+      <input type="radio" id="g_female" name="gender" value="female"> Female
+    </label>
+
+    <label>
+      <input id="newsletter" name="newsletter" type="checkbox"> Subscribe to newsletter
+    </label>
+
+    <label>Message
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+    </label>
+
+    <button id="submitBtn" type="button">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    // This JS fakes form submission and shows a confirmation.
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const name = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const age = document.getElementById('age').value;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value || 'N/A';
+      const newsletter = document.getElementById('newsletter').checked ? 'Yes' : 'No';
+      const message = document.getElementById('message').value;
+
+      const result = document.getElementById('result');
+      result.style.display = 'block';
+      result.innerHTML = `<strong>Received:</strong><br>
+                          Name: ${name}<br>
+                          Email: ${email}<br>
+                          Age: ${age}<br>
+                          Gender: ${gender}<br>
+                          Newsletter: ${newsletter}<br>
+                          Message: ${message}`;
+    });
+  </script>
+</body>
+</html>
