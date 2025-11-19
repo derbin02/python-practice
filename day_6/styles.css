@@ -1,0 +1,118 @@
+/* styles.css
+Laptop-first Water Intake Tracker
+Pallete: deep navy header + teal accent + warm yellow highlight
+Perplexity-like minimalism + big readable numbers
+*/
+
+:root{
+  --bg: linear-gradient(180deg,#f8fbff 0%, #ffffff 100%);
+  --card-bg: #ffffff;
+  --text: #0b1324;
+  --muted: #6b7280;
+  --accent: #2aa7a8;  /* teal */
+  --accent-2: #ffd200; /* warm gold */
+  --hero: #052a66;     /* deep navy */
+}
+
+/* global */
+html, body, [data-testid="stAppViewContainer"]{
+  background: var(--bg);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: var(--text);
+  padding: 18px 26px;
+}
+
+/* hero */
+.hero-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--hero);
+  margin-bottom: 6px;
+}
+.hero-sub {
+  color: var(--muted);
+  font-weight:700;
+  margin-bottom: 4px;
+}
+
+/* cards */
+.card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2,6,23,0.06);
+  margin-bottom: 12px;
+}
+.big-card { padding: 20px; }
+.small-card { padding: 14px; }
+
+/* side card */
+.side-card { padding: 16px; }
+
+/* section titles */
+.section-title { font-weight:900; color:var(--hero); margin-bottom:8px; }
+
+/* big number */
+.big-number {
+  font-size: 36px;
+  font-weight:900;
+  color:var(--hero);
+  margin-bottom: 4px;
+}
+.stat-number {
+  font-size:20px; font-weight:900; color:var(--hero);
+}
+
+/* muted */
+.muted { color:var(--muted); font-weight:700; }
+
+/* quick buttons */
+.stButton > button {
+  background: var(--accent) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  font-weight:800 !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 6px 18px rgba(42,167,168,0.12);
+  border: none !important;
+}
+
+/* manual add number input - larger */
+input[type="number"] {
+  height:46px !important;
+  border-radius:10px !important;
+  padding:8px 12px !important;
+  font-size:16px !important;
+}
+
+/* progress wrap (CSS circular-ish bar) */
+.progress-wrap {
+  width:120px;
+  height:120px;
+  position: relative;
+  margin: 6px auto;
+}
+.progress {
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background: conic-gradient(var(--accent) var(--p), #e6f6f5 var(--p));
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 8px 18px rgba(10,20,30,0.06);
+}
+.progress-label {
+  position:absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:18px; color:var(--hero);
+}
+
+/* table */
+table { width:100%; border-collapse:collapse; }
+
+/* footer */
+.footer { text-align:center; color:var(--muted); margin-top:18px; font-weight:700; }
+
+/* responsive for smaller laptops */
+@media(max-width:1000px){
+  .hero-title { font-size:30px; }
+  .progress-wrap { width:100px; height:100px; }
+}
